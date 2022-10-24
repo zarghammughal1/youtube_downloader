@@ -1,13 +1,19 @@
-# Proofreading Tool
-# pip install pytube
+"""
+    This will download the youtube video.
+    Libraries that should be installed.
+        pip install pytube
+"""
 from pytube import YouTube
 import os
 
 def downloader(url):
+    """
+        It will download the youtube video.
+    """
     yt_vid = YouTube(url).streams.filter(progressive=True)
     yt_vid.order_by('resolution').desc().first().download()
     print("Video Download Successfully!")
 
 
-url_Of_Video = "https://www.youtube.com/watch?v=-T9XExlPv1Y"
-downloader(url_Of_Video)
+# Function Calling.
+downloader("https://www.youtube.com/watch?v=-T9XExlPv1Y")
