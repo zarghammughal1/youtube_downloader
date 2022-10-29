@@ -6,6 +6,7 @@
 from pytube import YouTube
 import os
 
+# Function that download the youtube video.
 def downloader(url):
     """
         It will download the youtube video.
